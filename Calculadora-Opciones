@@ -1,0 +1,121 @@
+package com.mycompany.calculador;
+
+import java.util.Scanner;
+public static void main(String[] args) {
+        int num1, num2, cant, opc;
+        double divisor, dividendo,num_raiz;
+        Scanner captura = new Scanner(System.in);
+        do {
+            opc = menu();
+            switch (opc) {
+                case 1:
+                    System.out.println("\n***Digite el primer numero***\t");
+                    num1 = captura.nextInt();
+                    System.out.println("\n***Digite el segundo numero***\t");
+                    num2 = captura.nextInt();
+                    System.out.println("\n***El resultado de la suma es:***\t" + suma2(num1, num2));
+                    break;
+                case 3:
+                    System.out.println("\n***Digite el primer numero***\t");
+                    num1 = captura.nextInt();
+                    System.out.println("\n***Digite el segundo numero***\t");
+                    num2 = captura.nextInt();
+                    System.out.println("\n***El resultado de la resta es:***\t" + resta2(num1, num2));
+                    break;
+                case 5:
+                    System.out.println("\n***Digite el primer numero***\t");
+                    num1 = captura.nextInt();
+                    System.out.println("\n***Digite el segundo numero***\t");
+                    num2 = captura.nextInt();
+                    System.out.println("\n***El resultado de la multiplicacion es:***\t" + multiplica2(num1, num2));
+                    break;
+                case 7:
+                    System.out.println("\n***Digite el primer numero***\t");
+                    divisor = captura.nextDouble();
+                    do {
+                        System.out.println("\n***Digite el segundo numero (debe ser diferente a 0)***\t");
+                        dividendo = captura.nextInt();
+                    } while (dividendo == 0);
+                    System.out.println("\n***El resultado de la division es:***\t" + divide(divisor, dividendo));
+                    break;
+                case 2:
+                    System.out.println("\n***Digite la cantidad de datos a sumar***\t");
+                    cant = captura.nextInt();
+                    System.out.println("\n***El resultado de la suma es:***\t" + sumaplus(cant));
+                    break;
+                case 4:
+                    System.out.println("\n***Digite la cantidad de datos a restar***\t");
+                    cant = captura.nextInt();
+                    System.out.println("\n***El resultado de la resta es:***\t" + restaplus(cant));
+                    break;
+                case 6:
+                    System.out.println("\n***Digite la cantidad de datos a multiplicar***\t");
+                    cant = captura.nextInt();
+                    System.out.println("\n***El resultado de la multiplicacion es:***\t" + multiplicaplus(cant));
+                    break;
+                case 8:
+                    System.out.println("\n***Digite la base***\t");
+                    num1 = captura.nextInt();
+                    do {
+                        System.out.println("\n***Digite el exponente (debe ser un entero positivo)***\t");
+                        num2 = captura.nextInt();
+                    } while (num2 <= 0);
+                    System.out.println("\n***El resultado de la potencia es:***\t" + potenciaw(num1, num2));
+                    break;
+                case 9:
+                    System.out.println("\n***Digite la base***\t");
+                    num1 = captura.nextInt();
+                    do {
+                        System.out.println("\n***Digite el exponente (debe ser un entero positivo)***\t");
+                        num2 = captura.nextInt();
+                    } while (num2 <= 0);
+                    System.out.println("\n***El resultado de la potencia es:***\t" + potenciad(num1, num2));
+                    break;
+                case 10:
+                    System.out.println("\n***Digite la base***\t");
+                    num1 = captura.nextInt();
+                    do {
+                        System.out.println("\n***Digite el exponente (debe ser un entero positivo)***\t");
+                        num2 = captura.nextInt();
+                    } while (num2 <= 0);
+                    System.out.println("\n***El resultado de la potencia es:***\t" + potenciaf(num1, num2));
+                    break;
+                case 11:
+                    System.out.println("\n***Digite la base***\t");
+                    num1 = captura.nextInt();
+                    do {
+                        System.out.println("\n***Digite el exponente (debe ser un entero positivo)***\t");
+                        num2 = captura.nextInt();
+                    } while (num2 <= 0);
+                    System.out.println("\n***El resultado de la potencia es:***\t" + potenciafunc(num1, num2));
+                    break;
+                case 12:
+                    System.out.println("\n***Digite primer numero***\t");
+                    num1 = captura.nextInt();
+                    System.out.println("\n***Digite segundo numero***\t");
+                    num2 = captura.nextInt();
+                    System.out.println("\n***El numero mayor es:***\t" + mayorfunc(num1, num2));
+                    break;
+                case 13:
+                    System.out.println("\n***Digite primer numero***\t");
+                    num1 = captura.nextInt();
+                    System.out.println("\n***Digite segundo numero***\t");
+                    num2 = captura.nextInt();
+                    System.out.println("\n***El numero menor es:***\t" + menorfunc(num1, num2));
+                    break;
+                case 15:
+                    mensaje_salida();
+                    break;
+                case 14:
+                    System.out.println("\n***Digite el numero numero***\t");
+                    num_raiz = captura.nextDouble();
+                    System.out.println("\n***El numero menor es:***\t" + raiz_cuadrada(num_raiz));
+                    break;
+                default:
+                    System.out.println("\n***Opcion no valida***\t");
+                    break;
+ 
+            }
+        } while (opc != 15);
+    }
+}
