@@ -1,5 +1,6 @@
+
  calculadoras basica en java
-Estos archivos pertenecen a la formación llevada a cabo en el SENA CENTRO DE SERVICIO FINANCIERO en programa de analsis y desarollo de software (ADSO).
+Estos archivos pertenecen a la formación llevada a cabo en el SENA CENTRO DE SERVICIO FINANCIERO en programa de analIsis y desarollo de software (ADSO).
 
 Descripción
 Este programa en Java permite calcular varios indicadores de salud para pacientes, tales como:
