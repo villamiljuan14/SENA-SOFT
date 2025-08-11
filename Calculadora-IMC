@@ -1,0 +1,110 @@
+package com.mycompany.programa;
+
+import java.util.Scanner;
+
+class Paciente {
+    private String nombre;
+    private double peso;
+    private double altura;
+    private int edad;
+    private char genero;
+
+    public Paciente() {}
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public double getPeso() {
+        return peso;
+    }
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    public double getAltura() {
+        return altura;
+    }
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    public char getGenero() {
+        return genero;
+    }
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+}
+
+public class Programa {
+
+    public static double calcularIMC(double peso, double altura) {
+        return peso / (altura * altura);
+    }
+    public static int calcularFCM(int edad) {
+        return 220 - edad;
+    }
+    public static double calcularIMCAjustado(double peso, double altura, int edad) {
+        return calcularIMC(peso, altura) * (1 + (edad / 100.0));
+    }
+    public static double calcularTMB(double peso, double altura, int edad, char genero) {
+        if (genero == 'M' || genero == 'm') {
+            return (10 * peso) + (6.25 * altura * 100) - (5 * edad) + 5;
+        } else {
+            return (10 * peso) + (6.25 * altura * 100) - (5 * edad) - 161;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Paciente[] pacientes = new Paciente[3];
+
+        for (int i = 0; i < 3; i++) {
+            pacientes[i] = new Paciente();
+
+            System.out.print("Ingrese nombre" + (i + 1) + ": ");
+            pacientes[i].setNombre(scanner.nextLine());
+
+            System.out.print("Peso en kg: ");
+            pacientes[i].setPeso(scanner.nextDouble());
+
+            System.out.print("Altura en metros: ");
+            pacientes[i].setAltura(scanner.nextDouble());
+
+            System.out.print("Edad: ");
+            pacientes[i].setEdad(scanner.nextInt());
+
+            System.out.print("Género (M/F): ");
+            pacientes[i].setGenero(scanner.next().charAt(0));
+            scanner.nextLine();
+
+            double imc = calcularIMC(pacientes[i].getPeso(), pacientes[i].getAltura());
+            int fcm = calcularFCM(pacientes[i].getEdad());
+            double imcAjustado = calcularIMCAjustado(pacientes[i].getPeso(), pacientes[i].getAltura(), pacientes[i].getEdad());
+            double tmb = calcularTMB(pacientes[i].getPeso(), pacientes[i].getAltura(), pacientes[i].getEdad(), pacientes[i].getGenero());
+
+            System.out.println("\nResultados del paciente: " + pacientes[i].getNombre());
+            System.out.println("IMC: " + imc);
+            System.out.println("Frecuencia Cardíaca Máxima: " + fcm + " latidos por minuto");
+            System.out.println("IMC Ajustado: " + imcAjustado);
+            System.out.println("Tasa Metabólica Basal: " + tmb + " kcal/día");
+
+            if (imc < 18.5) {
+                System.out.println("Clasificación: Bajo peso");
+            } else if (imc >= 18.5 && imc < 24.9) {
+                System.out.println("Clasificación: Peso normal");
+            } else if (imc >= 25 && imc < 29.9) {
+                System.out.println("Clasificación: Sobrepeso");
+            } else {
+                System.out.println("Clasificación: Obesidad");
+            }
+        }
+    }
+}
