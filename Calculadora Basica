@@ -1,0 +1,123 @@
+package com.mycompany.calculador;
+
+import java.util.Scanner;
+
+public class Calculador {
+
+ 
+    public static int suma2(int n1, int n2) {
+        return (n1 + n2);
+    }
+ 
+    public static int sumaplus(int cant) {
+        Scanner captura = new Scanner(System.in);
+        int suma = 0, numero;
+        for (int i = 1; i <= cant; i++) {
+            System.out.println("\n***Digite un numero***\t");
+            numero = captura.nextInt();
+            suma += numero;
+        }
+        return (suma);
+    }
+ 
+    public static int resta2(int n1, int n2) {
+        return (n1 - n2);
+    }
+ 
+    public static int restaplus(int cant) {
+        Scanner captura = new Scanner(System.in);
+        int resta = 0, numero;
+        for (int i = 1; i <= cant; i++) {
+            System.out.println("\n***Digite un numero***\t");
+            numero = captura.nextInt();
+            resta -= numero;
+        }
+        return (resta);
+    }
+ 
+    public static int multiplica2(int n1, int n2) {
+        return (n1 * n2);
+    }
+ 
+    public static int multiplicaplus(int cant) {
+        Scanner captura = new Scanner(System.in);
+        int mult = 1, numero;
+        for (int i = 1; i <= cant; i++) {
+            System.out.println("\n***Digite un numero***\t");
+            numero = captura.nextInt();
+            mult *= numero;
+        }
+        return (mult);
+    }
+ 
+    public static double divide(double n1, double n2) {
+        return (n1 / n2);
+    }
+ 
+    public static long potenciaw(int base, int exponente) {
+        long pot = 1;
+        int i = 1;
+        while (i <= exponente) {
+            pot *= base;
+            i++;
+        }
+        return (pot);
+    }
+ 
+    public static long potenciad(int base, int exponente) {
+        long pot = 1;
+        int i = 1;
+        do {
+            pot *= base;
+            i++;
+        } while (i <= exponente);
+        return (pot);
+    }
+ 
+    public static long potenciaf(int base, int exponente) {
+        long pot = 1;
+        for (int i = 1; i <= exponente; i++) {
+            pot *= base;
+        }
+        return (pot);
+    }
+ 
+    public static double potenciafunc(int base, int exponente) {
+        return (Math.pow(base, exponente));
+    }
+ 
+    public static int mayorfunc(int n1, int n2) {
+        return (Math.max(n1, n2));
+    }
+ 
+    public static int menorfunc(int n1, int n2) {
+        return (Math.min(n1, n2));
+    }
+    public static double raiz_cuadrada(double num){
+        return (Math.sqrt(num));
+    }
+ 
+    public static int menu() {
+        System.out.println("****MENU CALCULADORA****");
+        System.out.println("*SUMA 2 DATOS OPCION 1*");
+        System.out.println("*SUMA VARIOS DATOS OPCION 2*");
+        System.out.println("*RESTA 2 DATOS OPCION 3*");
+        System.out.println("*RESTA VARIOS DATOS OPCION 4*");
+        System.out.println("*MULTIPLICA 2 DATOS OPCION 5*");
+        System.out.println("*MULTIPLICA VARIOS DATOS OPCION 6*");
+        System.out.println("*DIVIDE OPCION 7*");
+        System.out.println("*POTENCIA CON WHILE OPCION 8*");
+        System.out.println("*POTENCIA CON DO-WHILE OPCION 9*");
+        System.out.println("*POTENCIA CON FOR OPCION 10*");
+        System.out.println("*POTENCIA CON FUNCION OPCION 11*");
+        System.out.println("*MAXIMO 2 NUMEROS CON FUNCION OPCION 12*");
+        System.out.println("*MINIMO 2 NUMEROS CON FUNCION OPCION 13*");
+        System.out.println("*RAIZ CUADRADA DE UN NUMERO OPCION 14*");
+        System.out.println("*SALIR OPCION 15*");
+        System.out.println("**DIGITE UNA OPCION**\t");
+        Scanner captura = new Scanner(System.in);
+        return (captura.nextInt());
+    }
+    public static void mensaje_salida(){
+        System.out.println("\n***Gracias por usar la calculadora***\t");
+    }
